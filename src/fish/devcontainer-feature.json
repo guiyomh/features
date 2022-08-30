@@ -1,6 +1,6 @@
 {
     "id": "fish",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "name": "fish",
     "description":"Install the shell fish",
     "options": {
@@ -8,6 +8,13 @@
             "type": "boolean",
             "default": "true",
             "description": "Install minimal and fash Fish Prompt "
+        }
+    },
+    "customizations": {
+        "vscode":{
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "fish"
+            }
         }
     }
 }
