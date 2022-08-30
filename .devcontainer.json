@@ -8,7 +8,9 @@
         }
     },
     "features": {
-        "ghcr.io/devcontainers/features/docker-in-docker:1": {}
+        "ghcr.io/devcontainers/features/docker-in-docker:1": {},
+        "ghcr.io/guiyomh/features/fish": {},
+        "ghcr.io/guiyomh/features/vim": {}
     },
     "postCreateCommand": "npm install -g @devcontainers/cli"
 }
