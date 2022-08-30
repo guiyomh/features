@@ -12,8 +12,6 @@ jobs:
     strategy:
       matrix:
         features: [
-           "color",
-           "hello"
         ]
         baseImage:
           [
