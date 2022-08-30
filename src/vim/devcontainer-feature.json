@@ -1,0 +1,6 @@
+{
+    "id": "vim",
+    "version": "0.0.1",
+    "name": "vim",
+    "description":"Install the vim editor"
+}
