@@ -1,0 +1,13 @@
+{
+    "id": "fish",
+    "version": "0.0.1",
+    "name": "fish",
+    "description":"Install the shell fish",
+    "options": {
+        "pure": {
+            "type": "boolean",
+            "default": "true",
+            "description": "Install minimal and fash Fish Prompt "
+        }
+    }
+}
