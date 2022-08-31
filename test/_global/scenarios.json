@@ -5,7 +5,10 @@
             "golangci-lint": {
                 "version": "v1.47.2"
             },
-            "gotestsum": {}
+            "gotestsum": {},
+            "goreleaser": {
+                "version": "v1.10.3"
+            }
         }
     },
     "system": {

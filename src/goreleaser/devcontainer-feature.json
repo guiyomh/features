@@ -1,0 +1,23 @@
+{
+    "id": "goreleaser",
+    "version": "0.0.1",
+    "name": "goreleaser",
+    "description":"Release Go projects as fast and easily as possible!",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "v1.11.2",
+                "v1.10.3",
+                "v1.9.2",
+                "v1.8.3"
+            ],
+            "default": "latest",
+            "description": "Select or enter a goreleaser version to install"
+        }
+    },
+    "installAfter": [
+        "ghcr.io/devcontainers/features/go"
+    ]
+}
