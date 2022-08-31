@@ -1,0 +1,38 @@
+{
+    "id": "golangci-lint",
+    "version": "0.0.1",
+    "name": "golangci-lint",
+    "description":"Install a fast Go linters",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "v1.49.0",
+                "v1.48.0",
+                "v1.47.3",
+                "v1.46.2",
+                "v1.45.2",
+                "v1.44.2",
+                "v1.43.0",
+                "v1.42.1",
+                "v1.41.1"
+            ],
+            "default": "latest",
+            "description": "Select or enter a golangci-lint version to install"
+        }
+    },
+    "customizations": {
+        "vscode":{
+            "settings": {
+                "go.lintTool":"golangci-lint",
+                "go.lintFlags": [
+                "--fast"
+                ]
+            }
+        }
+    },
+    "installAfter": [
+        "ghcr.io/devcontainers/features/go"
+    ]
+}

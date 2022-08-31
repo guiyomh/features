@@ -23,7 +23,7 @@ source dev-container-features-test-lib
 check "fisher version" fish -c "fisher -v" | grep "version"
 check "pure-fish/pure installed" fish -c "fisher list" | grep "pure"
 
-check "vim version" vim --version
+check "vim version" vim --version | grep "Vi IMproved"
 
 
 # Report result

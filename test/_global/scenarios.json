@@ -1,5 +1,13 @@
 {
-    "all": {
+     "golang": {
+        "image": "mcr.microsoft.com/devcontainers/go:latest",
+        "features": {
+            "golangci-lint": {
+                "version": "v1.47.2"
+            }
+        }
+    },
+    "system": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
             "fish": {},

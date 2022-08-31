@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  system:
     runs-on: ubuntu-latest
     continue-on-error: true
     strategy:
@@ -21,6 +21,27 @@ jobs:
         baseImage:
           [
             "mcr.microsoft.com/devcontainers/base:ubuntu"
+          ]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: "Install latest devcontainer CLI"
+        run: npm install -g @devcontainers/cli
+
+      - name: "Generating tests for '${{ matrix.features }}' against '${{ matrix.baseImage }}'"
+        run: devcontainer features test -f ${{ matrix.features }} -i ${{ matrix.baseImage }} .
+
+  golang:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      matrix:
+        features: [
+           "golangci-lint",
+        ]
+        baseImage:
+          [
+            "mcr.microsoft.com/devcontainers/go:latest"
           ]
     steps:
       - uses: actions/checkout@v2
