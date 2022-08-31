@@ -3,8 +3,11 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "mads-hartmann.bash-ide-vscode"
-            ]
+				"mads-hartmann.bash-ide-vscode",
+				"DavidAnson.vscode-markdownlint",
+				"yzhang.markdown-all-in-one",
+				"timonwong.shellcheck"
+			]
         }
     },
     "features": {
