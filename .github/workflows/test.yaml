@@ -30,7 +30,7 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        features: ["golangci-lint", "gotestsum", "goreleaser"]
+        features: ["golangci-lint", "gotestsum", "goreleaser","pact-go"]
         baseImage: ["mcr.microsoft.com/devcontainers/go:latest"]
     steps:
       - uses: actions/checkout@v2

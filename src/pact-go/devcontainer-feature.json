@@ -1,0 +1,19 @@
+{
+    "id": "pact-go",
+    "version": "0.0.1",
+    "name": "pact-go",
+    "description":"Checks versions of required Pact CLI tools for used by the library",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "2.x.x"
+            ],
+            "default": "2.x.x",
+            "description": "Select or enter a pact-go version to install"
+        }
+    },
+    "installAfter": [
+        "ghcr.io/devcontainers/features/go"
+    ]
+}

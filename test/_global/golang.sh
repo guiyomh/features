@@ -23,6 +23,7 @@ source dev-container-features-test-lib
 check "golangci-lint version" golangci-lint --version | grep "v1.47.2"
 check "gotestsum version" gotestsum --version
 check "goreleaser version" goreleaser --version
+check "libpact_ffi found" pact-go install | grep "libpact_ffi found"
 
 
 

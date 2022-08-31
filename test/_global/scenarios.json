@@ -8,7 +8,8 @@
             "gotestsum": {},
             "goreleaser": {
                 "version": "v1.10.3"
-            }
+            },
+            "pact-go": {}
         }
     },
     "system": {
