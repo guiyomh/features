@@ -21,6 +21,7 @@ source dev-container-features-test-lib
 # The 'check' command comes from the dev-container-features-test-lib.
 
 check "golangci-lint version" golangci-lint --version | grep "v1.47.2"
+check "gotestsum version" gotestsum --version
 
 
 

@@ -1,0 +1,22 @@
+{
+    "id": "gotestsum",
+    "version": "0.0.1",
+    "name": "gotestsum",
+    "description":"Install a pretty test runner",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "v1.8.2",
+                "v1.7.0",
+                "v1.6.4"
+            ],
+            "default": "latest",
+            "description": "Select or enter a gotestsum version to install"
+        }
+    },
+    "installAfter": [
+        "ghcr.io/devcontainers/features/go"
+    ]
+}

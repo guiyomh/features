@@ -4,7 +4,8 @@
         "features": {
             "golangci-lint": {
                 "version": "v1.47.2"
-            }
+            },
+            "gotestsum": {}
         }
     },
     "system": {

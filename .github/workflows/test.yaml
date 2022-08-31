@@ -14,14 +14,8 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        features: [
-           "fish",
-           "vim"
-        ]
-        baseImage:
-          [
-            "mcr.microsoft.com/devcontainers/base:ubuntu"
-          ]
+        features: ["fish", "vim"]
+        baseImage: ["mcr.microsoft.com/devcontainers/base:ubuntu"]
     steps:
       - uses: actions/checkout@v2
 
@@ -36,13 +30,8 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        features: [
-           "golangci-lint",
-        ]
-        baseImage:
-          [
-            "mcr.microsoft.com/devcontainers/go:latest"
-          ]
+        features: ["golangci-lint", "gotestsum"]
+        baseImage: ["mcr.microsoft.com/devcontainers/go:latest"]
     steps:
       - uses: actions/checkout@v2
 
