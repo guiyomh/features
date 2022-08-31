@@ -3,7 +3,7 @@
 # This test can be run with the following command (from the root of this repo)
 #    devcontainer features test \
 #               --features golangci-lint \
-#               --base-image mcr.microsoft.com/devcontainers/base:ubuntu .
+#               --base-image mcr.microsoft.com/devcontainers/go:latest .
 
 set -e
 
