@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  system:
     runs-on: ubuntu-latest
     continue-on-error: true
     strategy:
