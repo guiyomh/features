@@ -16,7 +16,8 @@
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
             "fish": {},
-            "vim": {}
+            "vim": {},
+            "just": {}
         }
     }
 }

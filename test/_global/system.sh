@@ -24,6 +24,7 @@ check "fisher version" fish -c "fisher -v" | grep "version"
 check "pure-fish/pure installed" fish -c "fisher list" | grep "pure"
 
 check "vim version" vim --version | grep "Vi IMproved"
+check "just version" vim --version | grep "just"
 
 
 # Report result
