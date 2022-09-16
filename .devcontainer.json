@@ -8,14 +8,16 @@
 				"yzhang.markdown-all-in-one",
 				"timonwong.shellcheck",
 				"eamodio.gitlens",
-				"mhutchie.git-graph"
+				"mhutchie.git-graph",
+				"kokakiwi.vscode-just"
 			]
         }
     },
     "features": {
         "ghcr.io/devcontainers/features/docker-in-docker:1": {},
         "ghcr.io/guiyomh/features/fish": {},
-        "ghcr.io/guiyomh/features/vim": {}
+        "ghcr.io/guiyomh/features/vim": {},
+        "ghcr.io/guiyomh/features/just": {}
     },
     "postCreateCommand": "npm install -g @devcontainers/cli"
 }
