@@ -6,7 +6,9 @@
 				"mads-hartmann.bash-ide-vscode",
 				"DavidAnson.vscode-markdownlint",
 				"yzhang.markdown-all-in-one",
-				"timonwong.shellcheck"
+				"timonwong.shellcheck",
+				"eamodio.gitlens",
+				"mhutchie.git-graph"
 			]
         }
     },
