@@ -7,9 +7,9 @@ Install a pretty test runner
 
 ```json
 "features": {
-        "ghcr.io/guiyomh/features/gotestsum:0": {
-            "version": "latest"
-        }
+    "ghcr.io/guiyomh/features/gotestsum:0": {
+        "version": "latest"
+    }
 }
 ```
 
