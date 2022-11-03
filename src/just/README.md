@@ -7,13 +7,11 @@ Install the just a command runner
 
 ```json
 "features": {
-        "ghcr.io/guiyomh/features/just:0": {
-            "version": "latest"
-        }
+    "ghcr.io/guiyomh/features/just:0": {
+        "version": "latest"
+    }
 }
 ```
-
-## Options
 
 
 

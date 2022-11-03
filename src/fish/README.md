@@ -7,9 +7,9 @@ Install the shell fish
 
 ```json
 "features": {
-        "ghcr.io/guiyomh/features/fish:0": {
-            "version": "latest"
-        }
+    "ghcr.io/guiyomh/features/fish:0": {
+        "version": "latest"
+    }
 }
 ```
 

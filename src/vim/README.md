@@ -7,13 +7,11 @@ Install the vim editor
 
 ```json
 "features": {
-        "ghcr.io/guiyomh/features/vim:0": {
-            "version": "latest"
-        }
+    "ghcr.io/guiyomh/features/vim:0": {
+        "version": "latest"
+    }
 }
 ```
-
-## Options
 
 
 

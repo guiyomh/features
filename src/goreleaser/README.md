@@ -7,9 +7,9 @@ Release Go projects as fast and easily as possible!
 
 ```json
 "features": {
-        "ghcr.io/guiyomh/features/goreleaser:0": {
-            "version": "latest"
-        }
+    "ghcr.io/guiyomh/features/goreleaser:0": {
+        "version": "latest"
+    }
 }
 ```
 

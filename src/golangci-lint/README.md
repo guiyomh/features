@@ -7,9 +7,9 @@ Install a fast Go linters
 
 ```json
 "features": {
-        "ghcr.io/guiyomh/features/golangci-lint:0": {
-            "version": "latest"
-        }
+    "ghcr.io/guiyomh/features/golangci-lint:0": {
+        "version": "latest"
+    }
 }
 ```
 

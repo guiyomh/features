@@ -7,9 +7,9 @@ Checks versions of required Pact CLI tools for used by the library
 
 ```json
 "features": {
-        "ghcr.io/guiyomh/features/pact-go:0": {
-            "version": "latest"
-        }
+    "ghcr.io/guiyomh/features/pact-go:0": {
+        "version": "latest"
+    }
 }
 ```
 
