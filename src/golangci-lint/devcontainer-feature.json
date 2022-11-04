@@ -1,6 +1,6 @@
 {
     "id": "golangci-lint",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "name": "golangci-lint",
     "description":"Install a fast Go linters",
     "options": {
@@ -8,6 +8,7 @@
             "type": "string",
             "proposals": [
                 "latest",
+                "v1.50.1",
                 "v1.49.0",
                 "v1.48.0",
                 "v1.47.3",
