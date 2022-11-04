@@ -103,14 +103,7 @@ check_packages curl ca-certificates
 # Soft version matching
 find_version_from_git_tags GOTESTSUM_VERSION "https://github.com/gotestyourself/gotestsum" "tags/v" "." "true"
 
-case "${ID}" in
-    debian|ubuntu)
-        curl -sL -o /tmp/gotestsum.tar.gz "https://github.com/gotestyourself/gotestsum/releases/download/v${GOTESTSUM_VERSION}/gotestsum_${GOTESTSUM_VERSION}_linux_amd64.tar.gz"
-    ;;
-    alpine)
-        curl -sL -o /tmp/gotestsum.tar.gz "https://github.com/gotestyourself/gotestsum/releases/download/v${GOTESTSUM_VERSION}/gotestsum_${GOTESTSUM_VERSION}_linux_arm64.tar.gz"
-    ;;
-esac
+curl -sL -o /tmp/gotestsum.tar.gz "https://github.com/gotestyourself/gotestsum/releases/download/v${GOTESTSUM_VERSION}/gotestsum_${GOTESTSUM_VERSION}_linux_amd64.tar.gz"
 tar xzf /tmp/gotestsum.tar.gz gotestsum
 mv gotestsum /usr/local/bin/gotestsum
 rm /tmp/gotestsum.tar.gz
