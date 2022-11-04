@@ -28,20 +28,39 @@ elif [ "${USER}" = "none" ] || ! id -u ${USER} > /dev/null 2>&1; then
 fi
 
 echo "Installing fish shell..."
-if grep -q 'Debian' < /etc/os-release; then
-    if grep -q 'stretch' < /etc/os-release; then
-        echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_9.0/ /' | tee /etc/apt/sources.list.d/shells:fish:release:3.list
-        curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_9.0/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
-    elif grep -q 'buster' < /etc/os-release; then
-        echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_10/ /' | tee /etc/apt/sources.list.d/shells:fish:release:3.list
-        curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_10/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
-    elif grep -q 'bullseye' < /etc/os-release; then
-        echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_11/ /' | tee /etc/apt/sources.list.d/shells:fish:release:3.list
-        curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_11/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
-    fi
-    apt-get update
-    apt-get -y install --no-install-recommends fish
-fi
+
+# shellcheck source=/dev/null
+source /etc/os-release
+case ${ID} in
+    alpine)
+        apk add --no-cache fish
+    ;;
+    debian)
+        if [ "${VERSION_CODE}" == "stretch" ]; then
+            echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_9.0/ /' | tee /etc/apt/sources.list.d/shells:fish:release:3.list
+            curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_9.0/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
+        elif [ "${VERSION_CODE}" == "buster" ]; then
+            echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_10/ /' | tee /etc/apt/sources.list.d/shells:fish:release:3.list
+            curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_10/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
+        elif [ "${VERSION_CODE}" == "bullseye" ]; then
+            echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_11/ /' | tee /etc/apt/sources.list.d/shells:fish:release:3.list
+            curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_11/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
+        fi
+        apt-get update
+        apt-get -y install --no-install-recommends fish
+        # Clean up
+        rm -rf /var/lib/apt/lists/*
+    ;;
+    ubuntu)
+        echo "deb https://ppa.launchpadcontent.net/fish-shell/release-3/ubuntu ${UBUNTU_CODENAME} main" > /etc/apt/sources.list.d/shells:fish:release:3.list
+        curl -fsSL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x59fda1ce1b84b3fad89366c027557f056dc33ca5" | tee -a /etc/apt/trusted.gpg.d/shells_fish_release_3.asc > /dev/null
+        apt-get update
+        apt-get -y install --no-install-recommends fish
+        # Clean up
+        rm -rf /var/lib/apt/lists/*
+    ;;
+esac
+
 fish -v
 
 echo "Installing Fisher..."

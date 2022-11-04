@@ -1,13 +1,13 @@
 {
     "id": "fish",
-    "version": "0.0.3",
+    "version": "0.1.0",
     "name": "fish",
-    "description":"Install the shell fish",
+    "description":"Install the fish shell and the fish plugin manager and add the pure-fish theme (option)",
     "options": {
         "pure": {
             "type": "boolean",
             "default": "true",
-            "description": "Install minimal and fash Fish Prompt "
+            "description": "Install minimal and fast Fish Prompt "
         }
     },
     "customizations": {
