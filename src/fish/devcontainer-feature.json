@@ -1,8 +1,8 @@
 {
     "id": "fish",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "name": "fish",
-    "description":"Install the fish shell and the fish plugin manager and add the pure-fish theme (option)",
+    "description":"deprecated in favour of ghcr.io/meaningful-ooo/devcontainer-features/fish:1",
     "options": {
         "pure": {
             "type": "boolean",
