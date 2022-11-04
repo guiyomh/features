@@ -17,7 +17,7 @@ Checks versions of required Pact CLI tools for used by the library
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| version | Select or enter a pact-go version to install | string | 2.x.x |
+| version | Select or enter a pact-go version to install | string | 2.0.0-beta.10 |
 
 
 
