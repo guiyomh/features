@@ -111,8 +111,8 @@ case "${ID}" in
         rm -rf /tmp/goreleaser.deb
     ;;
     alpine)
-        echo "https://github.com/goreleaser/goreleaser/releases/download/v${GORELEASER_VERSION}/goreleaser_${GORELEASER_VERSION}_aarch64.apk" > /tmp/url.txt
-        curl -sL -o /tmp/goreleaser.apk "https://github.com/goreleaser/goreleaser/releases/download/v${GORELEASER_VERSION}/goreleaser_${GORELEASER_VERSION}_aarch64.apk"
+        echo "https://github.com/goreleaser/goreleaser/releases/download/v${GORELEASER_VERSION}/goreleaser_${GORELEASER_VERSION}_x86_64.apk" > /tmp/url.txt
+        curl -sL -o /tmp/goreleaser.apk "https://github.com/goreleaser/goreleaser/releases/download/v${GORELEASER_VERSION}/goreleaser_${GORELEASER_VERSION}_x86_64.apk"
         apk add --allow-untrusted /tmp/goreleaser.apk
         rm -rf /tmp/goreleaser.apk
     ;;
