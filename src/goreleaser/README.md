@@ -1,7 +1,7 @@
 
 # goreleaser (goreleaser)
 
-Release Go projects as fast and easily as possible!
+Install Goreleaser, to release Go projects as fast and easily as possible!
 
 ## Example Usage
 

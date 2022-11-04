@@ -1,7 +1,7 @@
 
 # fish (fish)
 
-Install the shell fish
+deprecated in favour of ghcr.io/meaningful-ooo/devcontainer-features/fish:1
 
 ## Example Usage
 
@@ -17,7 +17,7 @@ Install the shell fish
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| pure | Install minimal and fash Fish Prompt  | boolean | true |
+| pure | Install minimal and fast Fish Prompt  | boolean | true |
 
 
 
