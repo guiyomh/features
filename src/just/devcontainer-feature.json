@@ -1,6 +1,21 @@
 {
-    "id": "just",
-    "version": "0.0.1",
     "name": "just",
-    "description":"Install the just a command runner"
+    "id": "just",
+    "version": "0.1.0",
+    "description": "Installs just, just is a handy way to save and run project-specific commands on justfile.",
+    "documentationURL": "https://github.com/guiyomh/features/tree/main/src/just",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "1"
+            ],
+            "default": "latest",
+            "description": "Select version of just."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
 }
