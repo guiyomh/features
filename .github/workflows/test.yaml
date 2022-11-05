@@ -28,6 +28,7 @@ jobs:
         id: filter
         with:
           filters: |
+            dagger-cue: ./**/dagger-cue/**
             golangci-lint: ./**/golangci-lint/**
             goreleaser: ./**/goreleaser/**
             gotestsum: ./**/gotestsum/**
@@ -84,6 +85,7 @@ jobs:
     strategy:
       matrix:
         features:
+          - dagger-cue
           - golangci-lint
           - goreleaser
           - gotestsum
@@ -113,6 +115,7 @@ jobs:
     strategy:
       matrix:
         features:
+          - dagger-cue
           - golangci-lint
           - goreleaser
           - gotestsum
