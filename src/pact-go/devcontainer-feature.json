@@ -1,8 +1,8 @@
 {
     "id": "pact-go",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "name": "pact-go",
-    "description":"Checks versions of required Pact CLI tools for used by the library",
+    "description":"Configure Pact, to do contract testing with golang. Checks versions of required Pact CLI tools for used by the library.",
     "options": {
         "version": {
             "type": "string",
