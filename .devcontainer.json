@@ -3,14 +3,14 @@
     "customizations": {
         "vscode": {
             "extensions": [
-				"mads-hartmann.bash-ide-vscode",
-				"DavidAnson.vscode-markdownlint",
-				"yzhang.markdown-all-in-one",
-				"timonwong.shellcheck",
-				"eamodio.gitlens",
-				"mhutchie.git-graph",
-				"kokakiwi.vscode-just"
-			]
+                "mads-hartmann.bash-ide-vscode",
+                "DavidAnson.vscode-markdownlint",
+                "yzhang.markdown-all-in-one",
+                "timonwong.shellcheck",
+                "eamodio.gitlens",
+                "mhutchie.git-graph",
+                "kokakiwi.vscode-just"
+            ]
         }
     },
     "features": {
@@ -19,5 +19,5 @@
         "ghcr.io/guiyomh/features/vim": {},
         "ghcr.io/guiyomh/features/just": {}
     },
-    "postCreateCommand": "npm install -g @devcontainers/cli"
+    "postCreateCommand": "npm install -g @devcontainers/cli && fish -c \"fisher install pure-fish/pure\""
 }
