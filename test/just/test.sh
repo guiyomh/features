@@ -1,19 +1,54 @@
 #!/usr/bin/env bash
 
-# This test can be run with the following command (from the root of this repo)
-#    devcontainer features test \
-#               --features just \
-#               --base-image mcr.microsoft.com/devcontainers/base:ubuntu .
-
 set -e
 
-# Optional: Import test library bundled with the devcontainer CLI
+apt_get_update() {
+  case "${ID}" in
+    debian|ubuntu)
+      if [ "$(find /var/lib/apt/lists/* | wc -l)" = "0" ]; then
+        echo "Running apt-get update..."
+        apt-get update -y
+      fi
+    ;;
+  esac
+}
+
+# Checks if packages are installed and installs them if not
+check_packages() {
+  case "${ID}" in
+    debian|ubuntu)
+      if ! dpkg -s "$@" >/dev/null 2>&1; then
+        apt_get_update
+        apt-get -y install --no-install-recommends "$@"
+      fi
+    ;;
+    alpine)
+      if ! apk -e info "$@" >/dev/null 2>&1; then
+        apk add --no-cache "$@"
+      fi
+    ;;
+  esac
+}
+
+cleanup() {
+case "${ID}" in
+    debian|ubuntu)
+      rm -rf /var/lib/apt/lists/*
+    ;;
+  esac
+}
+
+# Clean up
+cleanup
+
+check_packages git
+LATEST_VERSION="$(git ls-remote --tags https://github.com/casey/just | grep -oP "[0-9]+\\.[0-9]+\\.[0-9]+" | sort -V | tail -n 1)"
+
+# shellcheck source=/dev/null
 source dev-container-features-test-lib
 
 # Feature-specific tests
-# The 'check' command comes from the dev-container-features-test-lib.
-check "just version" just --version
+check "version" just --version | grep "$LATEST_VERSION"
 
 # Report result
-# If any of the checks above exited with a non-zero exit code, the test will fail.
 reportResults

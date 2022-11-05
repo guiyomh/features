@@ -51,6 +51,12 @@ check_packages() {
   esac
 }
 
+check_git() {
+    if [ ! -x "$(command -v git)" ]; then
+        check_packages git
+    fi
+}
+
 find_version_from_git_tags() {
     local variable_name=$1
     local requested_version=${!variable_name}
@@ -69,7 +75,8 @@ find_version_from_git_tags() {
         fi
         local regex="${prefix}\\K[0-9]+${escaped_separator}[0-9]+${last_part}$"
         local version_list
-        check_packages git ca-certificates
+        check_git
+        check_packages ca-certificates
         version_list="$(git ls-remote --tags "${repository}" | grep -oP "${regex}" | tr -d ' ' | tr "${separator}" "." | sort -rV)"
         if [ "${requested_version}" = "latest" ] || [ "${requested_version}" = "current" ] || [ "${requested_version}" = "lts" ]; then
             declare -g "${variable_name}"="$(echo "${version_list}" | head -n 1)"
