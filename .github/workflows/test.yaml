@@ -47,7 +47,6 @@ jobs:
           - mcr.microsoft.com/devcontainers/base:ubuntu
           - mcr.microsoft.com/devcontainers/base:debian
           - mcr.microsoft.com/devcontainers/base:alpine
-          - alpine:latest
           - debian:stable-slim
           - ubuntu:focal
           - ubuntu:jammy
@@ -95,7 +94,6 @@ jobs:
           - mcr.microsoft.com/devcontainers/base:ubuntu
           - mcr.microsoft.com/devcontainers/base:debian
           - mcr.microsoft.com/devcontainers/base:alpine
-          - alpine:latest
           - debian:stable-slim
           - ubuntu:focal
           - ubuntu:jammy
