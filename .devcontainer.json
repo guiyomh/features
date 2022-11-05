@@ -12,7 +12,8 @@
                 "timonwong.shellcheck",
                 "eamodio.gitlens",
                 "mhutchie.git-graph",
-                "kokakiwi.vscode-just"
+                "kokakiwi.vscode-just",
+                "usernamehw.errorlens"
             ]
         }
     },
