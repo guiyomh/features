@@ -19,6 +19,15 @@ Install Goreleaser, to release Go projects as fast and easily as possible!
 |-----|-----|-----|-----|
 | version | Select or enter a goreleaser version to install | string | latest |
 
+<!-- markdownlint-disable MD041 -->
+
+## Supported platforms
+
+`linux/amd64` and `linux/arm64` platforms `debian`, `ubuntu` and `alpine`.
+
+## References
+
+- goreleaser: <https://goreleaser.com/>
 
 
 ---

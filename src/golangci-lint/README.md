@@ -19,6 +19,15 @@ Install a fast Go linters
 |-----|-----|-----|-----|
 | version | Select or enter a golangci-lint version to install | string | latest |
 
+<!-- markdownlint-disable MD041 -->
+
+## Supported platforms
+
+`linux/amd64` and `linux/arm64` platforms `debian`, `ubuntu` and `alpine`.
+
+## References
+
+- just: <https://golangci-lint.run/>
 
 
 ---
