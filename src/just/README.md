@@ -1,7 +1,7 @@
 
 # just (just)
 
-Install the just a command runner
+Installs just, just is a handy way to save and run project-specific commands on justfile.
 
 ## Example Usage
 
@@ -13,8 +13,21 @@ Install the just a command runner
 }
 ```
 
+## Options
 
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | Select version of just. | string | latest |
 
+<!-- markdownlint-disable MD041 -->
+
+## Supported platforms
+
+`linux/amd64` and `linux/arm64` platforms `debian`, `ubuntu` and `alpine`.
+
+## References
+
+- just: <https://just.systems>
 
 
 ---
