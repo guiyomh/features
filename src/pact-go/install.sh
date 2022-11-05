@@ -8,12 +8,20 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 PACTGO_VERSION=${VERSION:-"2.0.0-beta.10"}
-USER=${2:-"automatic"}
 
 export DEBIAN_FRONTEND=noninteractive
 
 # shellcheck source=/dev/null
 source /etc/os-release
+
+# Clean up
+cleanup() {
+case "${ID}" in
+    debian|ubuntu)
+      rm -rf /var/lib/apt/lists/*
+    ;;
+  esac
+}
 
 apt_get_update() {
   case "${ID}" in
@@ -43,7 +51,6 @@ check_packages() {
   esac
 }
 
-
 echo "Installing pact-go..."
 
 # Install dependencies if missing
@@ -56,5 +63,7 @@ rm /tmp/pact-go.tar.gz
 
 pact-go -l DEBUG install
 chmod 0755 /usr/local/lib/libpact_ffi.so
+
+cleanup
 
 echo "Done!"
