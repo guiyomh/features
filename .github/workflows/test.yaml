@@ -28,7 +28,6 @@ jobs:
         id: filter
         with:
           filters: |
-            fish: ./**/fish/**
             golangci-lint: ./**/golangci-lint/**
             goreleaser: ./**/goreleaser/**
             gotestsum: ./**/gotestsum/**
@@ -83,7 +82,6 @@ jobs:
     strategy:
       matrix:
         features:
-          - fish
           - golangci-lint
           - goreleaser
           - gotestsum
@@ -111,7 +109,6 @@ jobs:
     strategy:
       matrix:
         features:
-          - fish
           - golangci-lint
           - goreleaser
           - gotestsum
