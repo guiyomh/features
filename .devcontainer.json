@@ -2,6 +2,9 @@
     "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:0-18",
     "customizations": {
         "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "fish"
+            },
             "extensions": [
                 "mads-hartmann.bash-ide-vscode",
                 "DavidAnson.vscode-markdownlint",
