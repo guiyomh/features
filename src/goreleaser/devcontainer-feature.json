@@ -1,6 +1,6 @@
 {
     "id": "goreleaser",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "name": "goreleaser",
     "description":"Install Goreleaser, to release Go projects as fast and easily as possible!",
     "options": {
