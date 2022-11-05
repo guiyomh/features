@@ -47,7 +47,10 @@ jobs:
           - mcr.microsoft.com/devcontainers/base:ubuntu
           - mcr.microsoft.com/devcontainers/base:debian
           - mcr.microsoft.com/devcontainers/base:alpine
-          - mcr.microsoft.com/devcontainers/go:latest
+          - alpine:latest
+          - debian:stable-slim
+          - ubuntu:focal
+          - ubuntu:jammy
     steps:
       - uses: actions/checkout@v3
 
@@ -92,7 +95,10 @@ jobs:
           - mcr.microsoft.com/devcontainers/base:ubuntu
           - mcr.microsoft.com/devcontainers/base:debian
           - mcr.microsoft.com/devcontainers/base:alpine
-          - mcr.microsoft.com/devcontainers/go:latest
+          - alpine:latest
+          - debian:stable-slim
+          - ubuntu:focal
+          - ubuntu:jammy
     steps:
       - uses: actions/checkout@v3
 
