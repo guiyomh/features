@@ -15,6 +15,15 @@ export DEBIAN_FRONTEND=noninteractive
 # shellcheck source=/dev/null
 source /etc/os-release
 
+# Clean up
+cleanup() {
+case "${ID}" in
+    debian|ubuntu)
+      rm -rf /var/lib/apt/lists/*
+    ;;
+  esac
+}
+
 apt_get_update() {
   case "${ID}" in
     debian|ubuntu)
@@ -24,6 +33,12 @@ apt_get_update() {
       fi
     ;;
   esac
+}
+
+check_git() {
+    if [ ! -x "$(command -v git)" ]; then
+        check_packages git
+    fi
 }
 
 # Checks if packages are installed and installs them if not
@@ -61,7 +76,8 @@ find_version_from_git_tags() {
         fi
         local regex="${prefix}\\K[0-9]+${escaped_separator}[0-9]+${last_part}$"
         local version_list
-        check_packages git ca-certificates
+        check_git
+        check_packages ca-certificates
         version_list="$(git ls-remote --tags "${repository}" | grep -oP "${regex}" | tr -d ' ' | tr "${separator}" "." | sort -rV)"
         if [ "${requested_version}" = "latest" ] || [ "${requested_version}" = "current" ] || [ "${requested_version}" = "lts" ]; then
             declare -g "${variable_name}"="$(echo "${version_list}" | head -n 1)"
@@ -78,23 +94,6 @@ find_version_from_git_tags() {
     echo "${variable_name}=${!variable_name}"
 }
 
-# Determine the appropriate non-root user
-if [ "${USER}" = "auto" ] || [ "${USER}" = "automatic" ]; then
-    USER=""
-    POSSIBLE_USERS=("vscode" "node" "codespace" "$(awk -v val=1000 -F ":" '$3==val{print $1}' /etc/passwd)")
-    for CURRENT_USER in "${POSSIBLE_USERS[@]}"; do
-        if id -u "${CURRENT_USER}" > /dev/null 2>&1; then
-            USER=${CURRENT_USER}
-            break
-        fi
-    done
-    if [ "${USER}" = "" ]; then
-        USER=root
-    fi
-elif [ "${USER}" = "none" ] || ! id -u ${USER} > /dev/null 2>&1; then
-    USER=root
-fi
-
 echo "Installing gotestsum..."
 
 # Install dependencies if missing
@@ -109,5 +108,7 @@ mv gotestsum /usr/local/bin/gotestsum
 rm /tmp/gotestsum.tar.gz
 
 gotestsum --version
+
+cleanup
 
 echo "Done!"
