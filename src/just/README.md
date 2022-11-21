@@ -7,9 +7,7 @@ Installs just, just is a handy way to save and run project-specific commands on 
 
 ```json
 "features": {
-    "ghcr.io/guiyomh/features/just:0": {
-        "version": "latest"
-    }
+    "ghcr.io/guiyomh/features/just:0": {}
 }
 ```
 

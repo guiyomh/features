@@ -7,9 +7,7 @@ Configure Pact, to do contract testing with golang. Checks versions of required 
 
 ```json
 "features": {
-    "ghcr.io/guiyomh/features/pact-go:0": {
-        "version": "latest"
-    }
+    "ghcr.io/guiyomh/features/pact-go:0": {}
 }
 ```
 

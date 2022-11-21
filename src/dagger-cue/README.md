@@ -7,9 +7,7 @@ Installs dagger CI/CD engine that runs your pipelines in containers.
 
 ```json
 "features": {
-    "ghcr.io/guiyomh/features/dagger-cue:0": {
-        "version": "latest"
-    }
+    "ghcr.io/guiyomh/features/dagger-cue:0": {}
 }
 ```
 
