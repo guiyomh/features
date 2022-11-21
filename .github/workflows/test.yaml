@@ -32,6 +32,7 @@ jobs:
             golangci-lint: ./**/golangci-lint/**
             goreleaser: ./**/goreleaser/**
             gotestsum: ./**/gotestsum/**
+            gomarkdoc: ./**/gomarkdoc/**
             just: ./**/just/**
             pact-go: ./**/pact-go/**
             vim: ./**/vim/**
@@ -89,6 +90,7 @@ jobs:
           - golangci-lint
           - goreleaser
           - gotestsum
+          - gomarkdoc
           - just
           - pact-go
           - vim
@@ -119,6 +121,7 @@ jobs:
           - golangci-lint
           - goreleaser
           - gotestsum
+          - gomarkdoc
           - just
           - pact-go
           - vim

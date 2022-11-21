@@ -1,0 +1,22 @@
+{
+    "id": "gomarkdoc",
+    "version": "0.1.1",
+    "name": "gomarkdoc",
+    "description":" formats documentation for one or more packages as markdown.",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "0.4.1",
+                "0.4.0",
+                "0.3.2"
+            ],
+            "default": "latest",
+            "description": "Select or enter a gomarkdoc version to install"
+        }
+    },
+    "installAfter": [
+        "ghcr.io/devcontainers/features/go"
+    ]
+}
