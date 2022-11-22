@@ -1,0 +1,16 @@
+{
+    "fish-shell-installed": {
+        "image": "debian:stable-slim",
+		"features": {
+            "ghcr.io/meaningful-ooo/devcontainer-features/fish": {},
+			"asdf": {}
+		}
+    },
+    "zsh-shell-installed": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+		"features": {
+			"asdf": {}
+		}
+    }
+
+}
