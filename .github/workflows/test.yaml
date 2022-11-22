@@ -30,10 +30,11 @@ jobs:
           filters: |
             dagger-cue: ./**/dagger-cue/**
             golangci-lint: ./**/golangci-lint/**
+            gomarkdoc: ./**/gomarkdoc/**
             goreleaser: ./**/goreleaser/**
             gotestsum: ./**/gotestsum/**
-            gomarkdoc: ./**/gomarkdoc/**
             just: ./**/just/**
+            mage: ./**/mage/**
             pact-go: ./**/pact-go/**
             vim: ./**/vim/**
 
@@ -88,10 +89,11 @@ jobs:
         features:
           - dagger-cue
           - golangci-lint
+          - gomarkdoc
           - goreleaser
           - gotestsum
-          - gomarkdoc
           - just
+          - mage
           - pact-go
           - vim
         baseImage:
@@ -119,10 +121,11 @@ jobs:
         features:
           - dagger-cue
           - golangci-lint
+          - gomarkdoc
           - goreleaser
           - gotestsum
-          - gomarkdoc
           - just
+          - mage
           - pact-go
           - vim
     steps:
