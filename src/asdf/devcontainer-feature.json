@@ -1,0 +1,21 @@
+{
+    "id": "asdf",
+    "version": "0.1.0",
+    "name": "asdf",
+    "description":"Manage multiple runtime versions with a single CLI tool",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "0.10.2",
+                "0.9.0"
+            ],
+            "default": "latest",
+            "description": "Select or enter a `asdf` version to install"
+        }
+    },
+    "installAfter": [
+        "ghcr.io/meaningful-ooo/devcontainer-features/fish"
+    ]
+}
