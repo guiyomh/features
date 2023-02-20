@@ -114,6 +114,8 @@ mv "/tmp/just/just" /usr/local/bin/just
 mv "/tmp/just/just.1" "/usr/share/man/man1/just.1"
 rm -rf /tmp/just
 
+echo -e "\nsource <(just --completions bash)\n" >> "$_REMOTE_USER_HOME/.bashrc"
+
 # Clean up
 cleanup
 
