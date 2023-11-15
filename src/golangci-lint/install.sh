@@ -102,18 +102,26 @@ check_packages curl ca-certificates
 # Soft version matching
 find_version_from_git_tags GOLANGCI_VERSION "https://github.com/golangci/golangci-lint" "tags/v" "." "true"
 
+ARCH=$(uname -m)
+if [[ "$ARCH" == "aarch64" ]]; then
+  ARCH="arm64"
+else
+  ARCH="amd64"
+fi
+
 case "${ID}" in
     debian|ubuntu)
-        curl -sL -o /tmp/golangci-lint.deb "https://github.com/golangci/golangci-lint/releases/download/v${GOLANGCI_VERSION}/golangci-lint-${GOLANGCI_VERSION}-linux-amd64.deb"
+        ARCH=$(dpkg --print-architecture)
+        curl -sL -o /tmp/golangci-lint.deb "https://github.com/golangci/golangci-lint/releases/download/v${GOLANGCI_VERSION}/golangci-lint-${GOLANGCI_VERSION}-linux-${ARCH}.deb"
         dpkg -i /tmp/golangci-lint.deb
         rm -rf /tmp/golangci-lint.deb
     ;;
     alpine)
-        curl -sL -o /tmp/golangci-lint.tar.gz "https://github.com/golangci/golangci-lint/releases/download/v${GOLANGCI_VERSION}/golangci-lint-${GOLANGCI_VERSION}-linux-amd64.tar.gz"
-        tar xvf /tmp/golangci-lint.tar.gz "golangci-lint-${GOLANGCI_VERSION}-linux-amd64/golangci-lint"
-        ls -la "golangci-lint-${GOLANGCI_VERSION}-linux-amd64/"
-        mv "golangci-lint-${GOLANGCI_VERSION}-linux-amd64/golangci-lint" /usr/local/bin/golangci-lint
-        rm -rf  /tmp/golangci-lint.tar.gz "golangci-lint-${GOLANGCI_VERSION}-linux-amd64/"
+        curl -sL -o /tmp/golangci-lint.tar.gz "https://github.com/golangci/golangci-lint/releases/download/v${GOLANGCI_VERSION}/golangci-lint-${GOLANGCI_VERSION}-linux-${ARCH}.tar.gz"
+        tar xvf /tmp/golangci-lint.tar.gz "golangci-lint-${GOLANGCI_VERSION}-linux-${ARCH}/golangci-lint"
+        ls -la "golangci-lint-${GOLANGCI_VERSION}-linux-${ARCH}/"
+        mv "golangci-lint-${GOLANGCI_VERSION}-linux-${ARCH}/golangci-lint" /usr/local/bin/golangci-lint
+        rm -rf  /tmp/golangci-lint.tar.gz "golangci-lint-${GOLANGCI_VERSION}-linux-${ARCH}/"
     ;;
 esac
 
