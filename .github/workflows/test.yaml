@@ -17,7 +17,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-
   detect-changes:
     if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
@@ -28,7 +27,6 @@ jobs:
         id: filter
         with:
           filters: |
-            dagger-cue: ./**/dagger-cue/**
             golangci-lint: ./**/golangci-lint/**
             gomarkdoc: ./**/gomarkdoc/**
             goreleaser: ./**/goreleaser/**
@@ -87,7 +85,6 @@ jobs:
     strategy:
       matrix:
         features:
-          - dagger-cue
           - golangci-lint
           - gomarkdoc
           - goreleaser
@@ -119,7 +116,6 @@ jobs:
     strategy:
       matrix:
         features:
-          - dagger-cue
           - golangci-lint
           - gomarkdoc
           - goreleaser
