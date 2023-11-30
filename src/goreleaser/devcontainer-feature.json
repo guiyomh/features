@@ -1,24 +1,24 @@
 {
-    "id": "goreleaser",
-    "version": "0.1.1",
-    "name": "goreleaser",
-    "description":"Install Goreleaser, to release Go projects as fast and easily as possible!",
-    "options": {
-        "version": {
-            "type": "string",
-            "proposals": [
-                "latest",
-                "v1.12.3",
-                "v1.11.2",
-                "v1.10.3",
-                "v1.9.2",
-                "v1.8.3"
-            ],
-            "default": "latest",
-            "description": "Select or enter a goreleaser version to install"
-        }
-    },
-    "installAfter": [
-        "ghcr.io/devcontainers/features/go"
-    ]
+  "id": "goreleaser",
+  "version": "0.1.1",
+  "name": "goreleaser",
+  "description": "Install Goreleaser, to release Go projects as fast and easily as possible!",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "v1.12.3",
+        "v1.11.2",
+        "v1.10.3",
+        "v1.9.2",
+        "v1.8.3"
+      ],
+      "default": "latest",
+      "description": "Select or enter a goreleaser version to install"
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/go"
+  ]
 }
