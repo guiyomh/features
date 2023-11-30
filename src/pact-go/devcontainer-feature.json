@@ -1,28 +1,28 @@
 {
-    "id": "pact-go",
-    "version": "0.1.1",
-    "name": "pact-go",
-    "description":"Configure Pact, to do contract testing with golang. Checks versions of required Pact CLI tools for used by the library.",
-    "options": {
-        "version": {
-            "type": "string",
-            "proposals": [
-                "2.0.0-beta.10",
-                "2.0.0-beta.9",
-                "2.0.0-beta.8",
-                "2.0.0-beta.7",
-                "2.0.0-beta.6",
-                "2.0.0-beta.5",
-                "2.0.0-beta.4",
-                "2.0.0-beta.3",
-                "2.0.0-beta.2",
-                "2.0.0-beta.1"
-            ],
-            "default": "2.0.0-beta.10",
-            "description": "Select or enter a pact-go version to install"
-        }
-    },
-    "installAfter": [
-        "ghcr.io/devcontainers/features/go"
-    ]
+  "id": "pact-go",
+  "version": "0.1.1",
+  "name": "pact-go",
+  "description": "Configure Pact, to do contract testing with golang. Checks versions of required Pact CLI tools for used by the library.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "2.0.0-beta.10",
+        "2.0.0-beta.9",
+        "2.0.0-beta.8",
+        "2.0.0-beta.7",
+        "2.0.0-beta.6",
+        "2.0.0-beta.5",
+        "2.0.0-beta.4",
+        "2.0.0-beta.3",
+        "2.0.0-beta.2",
+        "2.0.0-beta.1"
+      ],
+      "default": "2.0.0-beta.10",
+      "description": "Select or enter a pact-go version to install"
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/go"
+  ]
 }
