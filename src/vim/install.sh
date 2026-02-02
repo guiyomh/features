@@ -51,7 +51,7 @@ check_packages() {
 
 echo "Installing vim ..."
 
-check_packages vim
+check_packages vim-nox
 
 vim --version
 
