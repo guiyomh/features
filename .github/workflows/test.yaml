@@ -27,6 +27,7 @@ jobs:
         id: filter
         with:
           filters: |
+            bun: ./**/bun/**
             golangci-lint: ./**/golangci-lint/**
             gomarkdoc: ./**/gomarkdoc/**
             goreleaser: ./**/goreleaser/**
@@ -85,6 +86,7 @@ jobs:
     strategy:
       matrix:
         features:
+          - bun
           - golangci-lint
           - gomarkdoc
           - goreleaser
@@ -116,6 +118,7 @@ jobs:
     strategy:
       matrix:
         features:
+          - bun
           - golangci-lint
           - gomarkdoc
           - goreleaser

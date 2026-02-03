@@ -1,0 +1,21 @@
+{
+    "name": "bun",
+    "id": "bun",
+    "version": "0.1.0",
+    "description": "Installs Bun, a fast all-in-one JavaScript runtime, bundler, transpiler and package manager.",
+    "documentationURL": "https://github.com/pablozaiden/devcontainer-features/tree/main/src/bun",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "1"
+            ],
+            "default": "latest",
+            "description": "Select version of Bun to install."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
