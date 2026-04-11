@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 JUST_VERSION=${VERSION:-"latest"}
+JUST_LSP_VERSION=${JUSTLSPVERSION:-"false"}
 
 set -e
 
@@ -115,6 +116,17 @@ mv "/tmp/just/just.1" "/usr/share/man/man1/just.1"
 rm -rf /tmp/just
 
 echo -e "\nsource <(just --completions bash)\n" >> "$_REMOTE_USER_HOME/.bashrc"
+
+# Install just-lsp if requested
+if [ "${JUST_LSP_VERSION}" != "false" ]; then
+    find_version_from_git_tags JUST_LSP_VERSION "https://github.com/terror/just-lsp" "tags/"
+    echo "Downloading just-lsp ${JUST_LSP_VERSION}..."
+    mkdir /tmp/just-lsp
+    curl -sL "https://github.com/terror/just-lsp/releases/download/${JUST_LSP_VERSION}/just-lsp-${JUST_LSP_VERSION}-$(uname -m)-unknown-linux-musl.tar.gz" | tar xz -C /tmp/just-lsp
+    mv "/tmp/just-lsp/just-lsp" /usr/local/bin/just-lsp
+    rm -rf /tmp/just-lsp
+    echo "just-lsp ${JUST_LSP_VERSION} installed."
+fi
 
 # Clean up
 cleanup
