@@ -13,6 +13,16 @@
             ],
             "default": "latest",
             "description": "Select version of just."
+        },
+        "lspVersion": {
+            "type": "string",
+            "proposals": [
+                "false",
+                "latest",
+                "0.4.2"
+            ],
+            "default": "false",
+            "description": "Install just-lsp, a language server for just. Set to 'false' to skip, 'latest' for the newest release, or a specific version number."
         }
     },
     "installsAfter": [

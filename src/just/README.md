@@ -11,11 +11,22 @@ Installs just, just is a handy way to save and run project-specific commands on 
 }
 ```
 
+To install just LSP:
+
+```json
+"features": {
+    "ghcr.io/guiyomh/features/just:0": {
+        "lspVersion": "latest"
+    }
+}
+```
+
 ## Options
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | Select version of just. | string | latest |
+| lspVersion | Install just-lsp, a language server for just. Set to `false` to skip, `latest` for the newest release, or a specific version number. | string | false |
 
 <!-- markdownlint-disable MD041 -->
 
@@ -26,6 +37,7 @@ Installs just, just is a handy way to save and run project-specific commands on 
 ## References
 
 - just: <https://just.systems>
+- just-lsp: <https://github.com/terror/just-lsp>
 
 
 ---
