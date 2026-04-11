@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 JUST_VERSION=${VERSION:-"latest"}
-JUST_LSP_VERSION=${JUSTLSPVERSION:-"false"}
+JUST_LSP_VERSION=${LSPVERSION:-"false"}
 
 set -e
 

@@ -14,7 +14,7 @@
             "default": "latest",
             "description": "Select version of just."
         },
-        "justLspVersion": {
+        "lspVersion": {
             "type": "string",
             "proposals": [
                 "false",
