@@ -12,7 +12,7 @@ This project **Features** is a set of reusable 'features'. Quickly add a tool/cl
 * [vim](src/vim/README.md): Install vim editor
 * [golangci-lint](src/golangci-lint/README.md): Install a fast Go linters
 * [gotestsum](src/gotestsum/README.md): Install a pretty test runner
-* [gorealeaser](src/goreleaser/README.md): Release Go projects as fast and easily as possible!
+* [goreleaser](src/goreleaser/README.md): Release Go projects as fast and easily as possible!
 * [pact-go](src/pact-go/README.md): Checks versions of required Pact CLI tools for used by the library
 
 ## Usage
