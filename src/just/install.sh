@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-JUST_VERSION=${VERSION:-"latest"}
+JUST_VERSION="${JUST_VERSION:-"latest"}"
 
 set -e
 
